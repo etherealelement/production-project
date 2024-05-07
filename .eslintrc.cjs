@@ -1,4 +1,4 @@
-const { module } = require('module');
+const  module  = require('module');
 module.exports = {
   env: { browser: true, es2020: true },
   extends: [
