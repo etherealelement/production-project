@@ -1,11 +1,9 @@
 import React, { Suspense } from "react";
 import "./styles/index.scss";
 import { Routes, Route, Link } from "react-router-dom";
-import { MainPageAsync } from "pages/MainPage/ui/MainPage.async";
 import { useTheme } from "app/providers/ThemeProvider/lib/useTheme";
 import { classNames } from "shared/lib/classNames/classNames";
-import AboutPage from "pages/AboutPage/ui/AboutPage";
-import MainPage from "pages/MainPage/ui/MainPage";
+import { AppRouter } from "./providers/routing";
 
 export enum Theme {
   LIGHT = "light",
@@ -20,12 +18,7 @@ const App = () => {
       <button onClick={toggleTheme}>toggle theme</button>
       <Link to={"/"}>Главная</Link>
       <Link to={"/about"}>О нас</Link>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path={"/about"} element={<AboutPage/>}></Route>
-          <Route path={"/"} element={<MainPage/>}></Route>
-        </Routes>
-      </Suspense>
+      <AppRouter></AppRouter>
     </div>
   );
 };
