@@ -4,6 +4,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import { useTheme } from "app/providers/ThemeProvider/lib/useTheme";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/routing";
+import { Navbar } from "widgets/Navbar";
 
 export enum Theme {
   LIGHT = "light",
@@ -15,10 +16,9 @@ const App = () => {
 
   return (
     <div className={classNames("app", {}, [theme])}>
-      <button onClick={toggleTheme}>toggle theme</button>
-      <Link to={"/"}>Главная</Link>
-      <Link to={"/about"}>О нас</Link>
+      <Navbar></Navbar>
       <AppRouter></AppRouter>
+      <button onClick={toggleTheme}>toggle theme</button>
     </div>
   );
 };
