@@ -6,6 +6,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/routing";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
+import { useTranslation } from "react-i18next";
 
 export enum Theme {
   LIGHT = "light",
@@ -17,11 +18,13 @@ const App = () => {
 
   return (
     <div className={classNames("app", {}, [theme])}>
-      <Navbar></Navbar>
-      <div className="content-page">
-        <Sidebar></Sidebar>
-        <AppRouter></AppRouter>
-      </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Navbar></Navbar>
+        <div className="content-page">
+          <Sidebar></Sidebar>
+          <AppRouter></AppRouter>
+        </div>
+      </Suspense>
     </div>
   );
 };
