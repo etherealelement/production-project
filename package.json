@@ -9,7 +9,9 @@
     "build:dev": "webpack --env mode=development",
     "start": "webpack serve --env port=3000",
     "lint:ts": "eslint \"./**/*.{ts,tsx}\"",
-    "lint:ts:fix": "eslint \"./**/*.{ts,tsx}\" --fix"
+    "lint:ts:fix": "eslint \"./**/*.{ts,tsx}\" --fix",
+    "lint:scss": "npx stylelint \"**/*.scss\"",
+    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix"
   },
   "keywords": [],
   "author": "",
