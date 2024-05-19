@@ -1,8 +1,7 @@
 {
-  "extends": [
-    "stylelint-config-standard"
-  ],
+  "extends": "stylelint-config-standard-scss",
   "rules": {
-    "media-feature-range-notation": "prefix"
+    "indentation": [4],
+    "selector-class-pattern": null
   }
 }
