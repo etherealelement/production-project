@@ -1,5 +1,5 @@
 import {FC} from "react";
-import styles from "./PageLoader.scss";
+import "./PageLoader.scss";
 import {classNames} from "shared/lib/classNames/classNames";
 
 interface PageLoaderProps {
@@ -8,8 +8,8 @@ interface PageLoaderProps {
 
 export const PageLoader: FC<PageLoaderProps> = () => {
   return (
-    <div className={classNames(styles.pageLoader, {}, [])}>
-
+    <div className={classNames("page-loader", {}, [])}>
+      <span className="loader"></span>
     </div>
   );
 };
