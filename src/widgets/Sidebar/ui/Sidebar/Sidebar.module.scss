@@ -27,3 +27,10 @@
 	right: 40px;
 	bottom: 40px;
 }
+
+.links {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
